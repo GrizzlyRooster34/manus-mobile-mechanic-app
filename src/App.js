@@ -7,13 +7,13 @@ import { auth } from './firebase/config';
 import SignupForm from './components/SignupForm';
 import ServiceRequestForm from './components/ServiceRequestForm';
 import QuoteForm from './components/QuoteForm';
-import LiveChatWidget from './components/LiveChatWidget';
-import VehicleGarageManager from './components/VehicleGarageManager';
-import LiveJobMap from './components/LiveJobMap';
-import SignatureCaptureModal from './components/SignatureCapture';
-import RatingReviewForm from './components/RatingReviewForm';
+import LiveChatWidget from './components/LiveChatWidget'; // New
+import VehicleGarageManager from './components/VehicleGarageManager'; // New
+import LiveJobMap from './components/LiveJobMap'; // New
+import SignatureCaptureModal from './components/SignatureCapture'; // New
+import RatingReviewForm from './components/RatingReviewForm'; // New
 
-// Pages
+// Pages (to be created)
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import ServiceRequests from './pages/ServiceRequests';
@@ -53,8 +53,8 @@ function App() {
           <Route path="/service-requests" element={user ? <ServiceRequests user={user} /> : <Navigate to="/login" />} />
           <Route path="/service-requests/:id" element={user ? <RequestDetails user={user} /> : <Navigate to="/login" />} />
           <Route path="/request-service" element={user ? <ServiceRequestForm userId={user.uid} /> : <Navigate to="/login" />} />
-          <Route path="/my-vehicles" element={user ? <VehicleGarageManager userId={user.uid} /> : <Navigate to="/login" />} />
-          <Route path="/job-map" element={user ? <LiveJobMap mechanicId={user.uid} /> : <Navigate to="/login" />} />
+          <Route path="/my-vehicles" element={user ? <VehicleGarageManager userId={user.uid} /> : <Navigate to="/login" />} /> {/* New Route */}
+          <Route path="/job-map" element={user ? <LiveJobMap mechanicId={user.uid} /> : <Navigate to="/login" />} /> {/* New Route */}
 
           {/* Default route */}
           <Route path="/" element={<Navigate to={user ? "/dashboard" : "/login"} />} />
@@ -64,7 +64,7 @@ function App() {
             userId={user.uid} 
             userName={user.displayName || user.email} 
             userEmail={user.email} 
-            userType={user.userType || 'customer'}
+            userType={user.userType || 'customer'} // Assuming userType is available in user object
           />
         )}
       </div>
@@ -73,3 +73,5 @@ function App() {
 }
 
 export default App;
+
+
