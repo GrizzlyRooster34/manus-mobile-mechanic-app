@@ -2,46 +2,71 @@
 
 A comprehensive React-based mobile mechanic service application that connects customers with professional mechanics for on-demand automotive services.
 
-## 🚗 Features
+## Features
 
-### Phase 1: Core Foundation
-- User authentication and profile management
-- Service booking system
-- Real-time mechanic tracking
-- Basic payment integration
+### Core Components
+- **App.js** - Main application router with authentication
+- **ServiceRequestForm** - Customer service request creation
+- **QuoteForm** - Mechanic quote generation
+- **JobStatusManager** - Enhanced job status tracking with custom statuses
+- **PaymentStatusTracker** - Payment status management and reminders
+- **PhotoUpload** - Job documentation with categorized photos
+- **RatingReviewForm** - Customer feedback and rating system
 
-### Phase 2: Enhanced Services
-- Advanced service categories
-- Mechanic ratings and reviews
-- Service history tracking
-- Push notifications
+### Advanced Features
+- **DiagnosticForm & DiagnosticResults** - AI-powered vehicle diagnostics
+- **EnhancedVINScanner** - VIN scanning with vehicle information lookup
+- **LicensePlateCapture** - OCR license plate scanning
+- **LiveChatWidget** - Customer support chat with AI assistant
+- **LiveJobMap** - Google Maps integration for job locations
+- **MechanicNotes** - Private mechanic notes system
+- **CancelJobModal** - Job cancellation with reason tracking
 
-### Phase 3: Advanced Features
-- AI-powered diagnostics
-- Multi-language support
-- Advanced analytics
-- Premium service tiers
+### Admin & Management
+- **AdminDashboard** - Business management interface
+- **PartsInventoryManager** - Parts inventory and ordering system
+- **MaintenanceReminderManager** - Vehicle maintenance scheduling
+- **VehicleGarageManager** - Customer vehicle management
 
-## 🛠️ Tech Stack
+## Technology Stack
 
-- **Frontend**: React 18.2.0
-- **Styling**: Tailwind CSS
-- **Backend**: Firebase
+- **Frontend**: React, React Native (for mobile)
+- **Backend**: Firebase (Firestore, Authentication, Storage)
 - **Maps**: Google Maps API
-- **AI Integration**: Custom AI services
-- **Authentication**: Firebase Auth
-- **Database**: Firestore
-- **Storage**: Firebase Storage
+- **AI/ML**: OpenAI GPT for diagnostics, Google Cloud Vision for OCR
+- **Payment**: Stripe integration
+- **Real-time**: Firebase real-time database
 
-## 📱 Getting Started
+## Key Features
 
-### Prerequisites
-- Node.js (v16 or higher)
-- npm or yarn
-- Firebase account
-- Google Maps API key
+### For Customers
+- Request mobile mechanic services
+- Upload photos and describe issues
+- Track job status in real-time
+- Receive quotes and approve work
+- Make payments securely
+- Rate and review mechanics
+- Manage vehicle information
+- Maintenance reminders
 
-### Installation
+### For Mechanics
+- View and accept job requests
+- Create detailed quotes
+- Update job status
+- Upload progress photos
+- Add private notes
+- Manage parts inventory
+- Track earnings and analytics
+- Navigate to job locations
+
+### For Admins
+- Manage users and mechanics
+- Set pricing and service areas
+- View business analytics
+- Export data and reports
+- Configure system settings
+
+## Installation
 
 1. Clone the repository:
 ```bash
@@ -56,67 +81,55 @@ npm install
 
 3. Set up environment variables:
 ```bash
-cp .env.example .env.local
+cp .env.example .env
+# Edit .env with your Firebase, Google Maps, and other API keys
 ```
-Fill in your Firebase config and Google Maps API key in `.env.local`
 
 4. Start the development server:
 ```bash
 npm start
 ```
 
-The app will be available at `http://localhost:3000`
-
-## 🔧 Configuration
+## Configuration
 
 ### Firebase Setup
-1. Create a new Firebase project
+1. Create a Firebase project
 2. Enable Authentication, Firestore, and Storage
-3. Add your Firebase configuration to `.env.local`
+3. Add your Firebase config to the environment variables
 
 ### Google Maps Setup
-1. Get a Google Maps API key
-2. Enable Maps JavaScript API and Places API
-3. Add the API key to `.env.local`
+1. Enable Google Maps JavaScript API
+2. Enable Google Cloud Vision API (for OCR)
+3. Add your API key to environment variables
 
-## 📂 Project Structure
+### OpenAI Setup
+1. Get an OpenAI API key
+2. Add to environment variables for diagnostic features
+
+## Project Structure
 
 ```
 src/
-├── components/          # Reusable UI components
-├── pages/              # Application pages
-├── services/           # API and service integrations
-├── hooks/              # Custom React hooks
-├── utils/              # Utility functions
-├── contexts/           # React contexts
-├── assets/             # Static assets
-└── styles/             # Global styles
+├── components/          # React components
+├── services/           # Business logic and API calls
+├── firebase/           # Firebase configuration
+├── pages/             # Page components
+├── utils/             # Utility functions
+└── styles/            # CSS and styling
 ```
 
-## 🚀 Deployment
-
-The app is production-ready and can be deployed to:
-- Vercel
-- Netlify
-- Firebase Hosting
-- AWS Amplify
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
-## 📞 Support
+## License
 
-For support and questions, please open an issue in the GitHub repository.
+This project is licensed under the MIT License.
 
----
+## Support
 
-**Manus** - Bringing professional mechanic services to your doorstep.
+For support and questions, please open an issue on GitHub.
